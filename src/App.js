@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import ProductPage from "./components/ProductPage";
+import Header from "./components/Header"
+import testProduct1 from './data/testProduct1'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Header />
+			<ProductPage productName={testProduct1.productName} productDescription={testProduct1.productDescription} productPrice={testProduct1.productPrice} productDiscount={testProduct1.productDiscount} productOgPrice={testProduct1.productOgPrice} />
+		</div>
+	);
 }
 
 export default App;
