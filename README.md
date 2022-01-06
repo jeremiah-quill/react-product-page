@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Frontend Mentor - E-commerce product page solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deployed Link: https://jeremiah-quill.github.io/react-product-page/
 
-## Available Scripts
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+  - [The challenge](#the-challenge)
+  - [My goals](#my-goals)
+  - [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### My goals
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I have never been satisfied with my ability to turn a pre-determined design into a clean web page so my initial goal for this exercise was to continue refining this skill.  After completing this mock page with HTML, CSS, and vanilla Javascript, my goal then pivoted to recreating the same page but with React.
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I first mapped out how I wanted this product page to adapt to different screen sizes.  I knew I wanted to build this using a mobile first approach, but in doing so I still needed to figure out how I wanted the content to shift when increasing the screen size.  Once I had a clear idea of how this would work, I added all of my HTML while also including classes on elements that I would use afterwards.  I find styling a webpage much easier if I have already thought through how things will work, what I will name different elements and sections, etc.
 
-### `npm run eject`
+Since I used a mobile first approach, there wasn't too much CSS required to get my page looking like the provided PDF.  As soon as the mobile version was complete I started adding functionality.  I added event listeners to the hamburger and cart icons so I could add and remove classes that would change the display of the sidebar and cart elements.  I also created a Counter class, Gallery class, and Cart class to help manage the "state" of these elements so I could increase the count of a product, cycle through an image gallery, and keep track of what and how many items are in a cart.  At this point I started to realize that creating a fully functional page like this, even though it appears relatively simple, requires a lot of DOM interaction.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I had explored React and created a few comprehensive personal projects in the past, but this is really where the lightbulb turned on for me.  Since I had already put in the work to create the functionality on the page using vanilla JS and I had a pretty good base layer knowledge of React, I started to take some notes on how I would transfer this page over to React.  I could use almost all the same HTML and CSS, but would be able to break the pieces of the page into different components.  I would be able to use hooks to re-use logic that is seen throughout the page (toggling UI components on and off, using a counter that can increment and decrement), and access state to easily keep track of data.  Re-rendering certain parts of the page would now be much easier as I wouldn't have to explicitly call a render function, React will render a component as soon as it sees a change in state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I am very satisfied with how this webpage transitioned from no framework to React.  Building the functionality in vanilla JS almost made me think in React terms, which made the transition that much smoother.  For future projects I will look to React earlier on when there is so much DOM manipulation required.  It just makes everything easier!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built with
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There are a few parts of this page that I plan on tweaking:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- hover states on all buttons
+- focus states on all buttons for accessibility
+- full "lightbox gallery" effect when clicking on large product image
+- small, clickable, thumbnail images under large product image on desktop view
+- transition effects on dynamic elements like overlay, cart, sidebar, etc.
